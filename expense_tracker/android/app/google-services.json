@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "205634400835",
+    "project_id": "tracktaka-b4c11",
+    "storage_bucket": "tracktaka-b4c11.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205634400835:android:1869f498935e6412eb9af6",
+        "android_client_info": {
+          "package_name": "com.example.expense_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNGqtmSRcM3cSyIBDYaqLZxNkpSkG1kOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

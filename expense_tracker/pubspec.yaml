@@ -1,0 +1,40 @@
+name: expense_tracker
+description: "A new Flutter project."
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.6.6 # For state management and routing
+  get_storage: ^2.0.3 # For local storage using GetStorage
+  dio: ^5.1.0 # For HTTP requests
+  hive: ^2.2.3 # For local database storage
+  hive_flutter: ^1.1.0 # For Flutter integration with Hive
+  intl: ^0.18.1 # For date and number formatting
+  fl_chart: ^0.63.0 # Newer stable version
+  cupertino_icons: ^1.0.8 # For iOS-style icons
+  flutter_colorpicker: ^1.0.3 # Add this line
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  hive_generator: ^2.0.1 # For generating Hive type adapters
+  build_runner: ^2.4.7 # For code generation with Hive and other packages
+  flutter_lints: ^5.0.0 # For applying lint rules and improving code quality
+  flutter_launcher_icons: "^0.14.3"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo.png"
+
+flutter:
+  uses-material-design: true
+
+assets:
+  - assets/logo.png
