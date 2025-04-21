@@ -188,7 +188,7 @@ class _SplashScreenState extends State<SplashScreen>
                               ),
                             ),
                             Text(
-                              "Way-Wise Tech",
+                              "RK TUSHAR ",
                               style: TextStyle(
                                 color: Colors.greenAccent,
                                 fontSize: 14,
