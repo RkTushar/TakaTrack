@@ -83,7 +83,7 @@ class DailyExpenseChart extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.only(right: 8.0),
                     child: Text(
-                      '\৳${value.toInt()}',
+                      '৳${value.toInt()}',
                       style: const TextStyle(color: Colors.grey, fontSize: 10),
                     ),
                   );
