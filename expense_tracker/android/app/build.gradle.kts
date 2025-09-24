@@ -1,24 +1,14 @@
-import java.util.Properties
-import java.io.FileInputStream
-
 plugins {
     id("com.android.application")
-    id("com.google.gms.google-services")
     id("kotlin-android")
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
-// Load keystore properties from key.properties file
-val keystoreProperties = Properties()
-val keystorePropertiesFile = rootProject.file("key.properties")
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-}
-
 android {
-    namespace = "com.example.expense_tracker"
+    namespace = "com.example.quizapp"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "27.0.12077973"
+    ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -29,30 +19,25 @@ android {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
+    // Safely read versionCode & versionName with fallbacks
+    val flutterVersionCode = (project.findProperty("flutter.versionCode") as String?)?.toInt() ?: 1
+    val flutterVersionName = project.findProperty("flutter.versionName") as String? ?: "1.0"
+
     defaultConfig {
-        applicationId = "com.example.expense_tracker"
+        // TODO: Specify your own unique Application ID
+        applicationId = "com.example.quizapp"
+
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
-    }
-
-    signingConfigs {
-        create("release") {
-            // Read keystore details from key.properties
-            keyAlias = keystoreProperties["keyAlias"] as String
-            keyPassword = keystoreProperties["keyPassword"] as String
-            storeFile = file(keystoreProperties["storeFile"] as String)  // Ensure correct file path reference
-            storePassword = keystoreProperties["storePassword"] as String
-        }
+        versionCode = flutterVersionCode
+        versionName = flutterVersionName
     }
 
     buildTypes {
-        getByName("release") {
-            signingConfig = signingConfigs.getByName("release")
-            isMinifyEnabled = false
-            isShrinkResources = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 }
